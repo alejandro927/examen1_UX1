@@ -1,17 +1,15 @@
-"use client";
+//aqui desarrolllamos los botones que se mostraran las peliculas
 import React from 'react';
-
-interface BotonProps {
-    onClick?: () => void;
-    children: React.ReactNode;
-    className?: string;
-    type?: "button" | "submit" | "reset";
+interface Boton {
+    texto: string;
+    estaSeleccionado: boolean;
+    onClick: () => void;
 }
 
-export default function Boton({ onClick, children, className, type = "button" }: BotonProps) {
+export default function Boton({ texto, onClick }: Boton) {
     return (
-        <button type={type} onClick={onClick} className={className}>
-            {children}
+        <button>
+            {texto}
         </button>
     );
 }
